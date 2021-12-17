@@ -16,13 +16,15 @@ Including another URLconf
 # other imports
 from django.contrib import admin
 
-from blog.views import index, post_detail
+# from blog.views import index, post_detail
 from django.urls import path, include
 
 urlpatterns = [
   path('admin/', admin.site.urls),
-  # other patterns
-  path("", index),
-      path("post/<slug>/", post_detail, name="blog-post-detail"),
-  path("api/v1/", include("blog.api_urls")),
+  #   # other patterns
+  #   path("", index),
+  #       path("post/<slug>/", post_detail, name="blog-post-detail"),
+  #   path("api/v1/", include("blog.api_urls")),
+  #   views
+  path("api/v1/", include("blog.api.urls")),
 ]
